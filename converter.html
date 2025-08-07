@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converter Hub</title>
+  <link rel="stylesheet" href="converter.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>Converter Hub</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="project.html">Projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="tab-buttons">
+      <button class="tab active" onclick="switchTab('file')">File Transfer</button>
+      <button class="tab" onclick="switchTab('temperature')">Temperature</button>
+      <button class="tab" onclick="switchTab('scientific')">Scientific Notation</button>
+      <button class="tab" onclick="switchTab('metric')">Metric Prefix</button>
+    </div>
+    <div id="mluleki">
+    <section id="file" class="tab-content active">
+      <h2>File Transfer Calculator</h2>
+      <label>File Size:
+        <input type="number" id="fileSize" placeholder="Enter size">
+        <select id="fileUnit">
+          <option value="MB">MB</option>
+          <option value="GB">GB</option>
+          <option value="GB">GB</option>
+        </select>
+      </label>
+      <label>Speed:
+        <input type="number" id="speed" placeholder="Enter speed">
+        <select id="speedUnit">
+          <option value="Mbps">Mbps</option>
+          <option value="MBps">MBps</option>
+          <option value="KBps">KBps</option>
+        </select>
+      </label>
+      <button onclick="calculateTransferTime()">Calculate</button>
+      <p id="fileResult"></p>
+    </section>
+
+    <section id="temperature" class="tab-content">
+      <h2>Temperature Converter</h2>
+      <input type="number" id="tempInput" placeholder="Enter temperature">
+      <select id="tempUnit">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+      </select>
+      <button onclick="convertTemperature()">Convert</button>
+      <p id="tempResult"></p>
+    </section>
+
+    <section id="scientific" class="tab-content">
+      <h2>Scientific Notation Converter</h2>
+      <input type="number" id="sciInput" placeholder="Enter number">
+      <button onclick="toScientific()">Convert</button>
+      <p id="sciResult"></p>
+    </section>
+
+    <section id="metric" class="tab-content">
+      <h2>Metric Prefix Converter</h2>
+      <input type="number" id="metricInput" placeholder="Enter value">
+      <select id="metricFrom">
+        <option value="1">Unit</option>
+        <option value="1000">Kilo</option>
+        <option value="1000000">Mega</option>
+      </select>
+      to
+      <select id="metricTo">
+        <option value="1">Unit</option>
+        <option value="1000">Kilo</option>
+        <option value="1000000">Mega</option>
+      </select>
+      <button onclick="convertMetric()">Convert</button>
+      <p id="metricResult"></p>
+    </section>
+    </div>
+  </main>
+
+  <script src="converter.js"></script>
+</body>
+</html>
