@@ -7,8 +7,12 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-}
+  height: 100%;
 
+}
+.mluleki{
+  height: 100vh;
+}
 .navbar h1{
   display: flex;
   color: white;
